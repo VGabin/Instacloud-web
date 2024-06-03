@@ -22,7 +22,7 @@ const BottomNavigation = () => {
                     </button>
                 </Link>
 
-                <Link className="flex" href="/">
+                <Link className="flex" href="/search">
                     <button type="button"
                             className="inline-flex flex-col items-center justify-center px-5 hover:bg-gray-50 dark:hover:bg-gray-800 group">
                         <svg className="h-5 w-5 text-blue-500" viewBox="0 0 24 24" fill="none" stroke="currentColor"
