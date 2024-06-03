@@ -1,24 +1,15 @@
 'use client'
-import React, {useState} from 'react';
+import React from 'react';
 import Layout from "@/components/layout";
-import {CldUploadWidget, CloudinaryUploadWidgetInfo} from 'next-cloudinary';
+import PostForm from "@/components/new-post/PostForm";
 
 const Page = () => {
-    const [resource, setResource] = useState<CloudinaryUploadWidgetInfo | string>();
-
-    console.log(resource)
 
     return (
         <Layout>
-            <div className="max-w-screen-md mx-auto border-2 border-red-300">
-                <CldUploadWidget
-                    onSuccess={(result) => setResource(result.info)
-                    } uploadPreset="ml_default">{({open}) => (
-                    <button type="button" className="" onClick={() => open()}>
-                        Upload
-                    </button>
-                )}
-                </CldUploadWidget>
+            <div className="max-w-screen-md mx-auto p-4 bg-white shadow-md rounded">
+                <h2 className="text-2xl font-bold mb-4">Create a New Post</h2>
+                <PostForm/>
             </div>
         </Layout>
     );
