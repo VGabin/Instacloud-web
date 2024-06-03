@@ -65,6 +65,12 @@ const Profile = () => {
         setIsShowModal(false)
     }
 
+    const handleLogout = () => {
+        localStorage.removeItem('user')
+        localStorage.removeItem('token')
+        window.location.href = '/auth/login';
+    }
+
     return (
         <Layout>
             <div className="min-h-screen">
@@ -79,6 +85,10 @@ const Profile = () => {
                             </div>
                         </div>
                         <div className="flex space-x-2 mt-4 sm:mt-0">
+                            <button onClick={handleLogout} type="button"
+                                    className="rounded-md bg-gray-300 px-2.5 py-1.5 text-sm font-semibold text-red-500 shadow-sm ring-1 ring-inset ring-gray-300 hover:bg-gray-50">
+                                logout
+                            </button>
                             <button onClick={() => setIsShowModal(true)} type="button"
                                     className="rounded-md bg-gray-300 px-2.5 py-1.5 text-sm font-semibold text-gray-900 shadow-sm ring-1 ring-inset ring-gray-300 hover:bg-gray-50">
                                 Edit
